@@ -1,14 +1,35 @@
 @extends("layout")
 
 @section("content")
+	<div class="jumbotron p-4">
+		<div class="container">
+			<div class="row">
+				<div class="col-3">
+					<h3>{{ $account->name }}</h3>
+					<p>{{ $uniqueItems->count() }} Uniques</p>
+				</div>
+				<div class="col-9">
+					<div class="row">
+						@foreach($leagues as $league)
+							<div class="col-4 text-center pb-1">
+								{{ $league->name }}
+								<div class="progress">
+									<div class="progress-bar progress-bar-striped" style="width: 25%;"></div>
+								</div>
+							</div>
+						@endforeach
+					</div>
+				</div>
+			</div>
+		</div>
+	</div>
+
 	<div class="album pb-5 bg-light">
 		<div class="container">
-			<h1>{{ $account->name }}</h1>
-
 			<div class="row">
 
 				@foreach($uniqueItems as $uniqueItem)
-					<div class="col-md-3 mb-2">
+					<div class="col-3 mb-2">
 						<div class="itemBox">
 							<div class="itemHeader">
 								<div class="itemHeaderLeft"></div>

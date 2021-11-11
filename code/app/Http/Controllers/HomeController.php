@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
 use App\Account;
+use App\League;
 
 class HomeController extends Controller
 {
@@ -25,7 +26,9 @@ class HomeController extends Controller
 			->orderBy("name", "ASC")
 			->get();
 
-		return view("account", ["account" => $account, "uniqueItems" => $uniqueItems]);
+		$leagues = League::orderBy("id", "ASC")->get();
+
+		return view("account", ["account" => $account, "leagues" => $leagues, "uniqueItems" => $uniqueItems]);
 	}
 
 	public function postFindAccount(Request $request)

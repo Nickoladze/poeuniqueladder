@@ -19,13 +19,13 @@ class GetStashes extends Command
 
 	public function handle()
 	{
-		$this->getPage("20857614-19175879-20089801-17365522-18799239");
+		$this->getPage("25502018-27199341-25460605-26590582-27014237");
 
 		// TODO
 		// mark leagues when uniques were released
 		// mark retired/renamed uniques
 		// mark uniques hidden in unique tab by default
-		// mark foil items
+		// mark foil items, different frame border?
 		// handle variants that aren't on different bases like atziri belt, beachhead, abyss uniques with 1/2 sockets
 	}
 
@@ -127,13 +127,6 @@ class GetStashes extends Command
 			if(isset($item["flavourText"]))
 				$uniqueItem->flavor_text = implode("<br />", $item["flavourText"]);
 
-			$uniqueItem->save();
-		}
-
-		// TODO remove when they are all filled
-		if(empty($uniqueItem->flavor_text) && isset($item["flavourText"]))
-		{
-			$uniqueItem->flavor_text = implode("<br />", $item["flavourText"]);
 			$uniqueItem->save();
 		}
 

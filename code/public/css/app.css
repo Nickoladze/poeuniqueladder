@@ -11028,3 +11028,7 @@ a.text-dark:focus {
   line-height: 1.3;
 }
 
+.progress {
+  border: 1px solid #AAAAAA;
+}
+

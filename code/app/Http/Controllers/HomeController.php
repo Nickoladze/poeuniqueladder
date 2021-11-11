@@ -27,4 +27,13 @@ class HomeController extends Controller
 
 		return view("account", ["account" => $account, "uniqueItems" => $uniqueItems]);
 	}
+
+	public function postFindAccount(Request $request)
+	{
+		$account = Account::where("name", $request->get("accountName"))->first();
+		if($account)
+			return redirect()->action("HomeController@showAccount", $account);
+
+		return redirect()->back()->with("error", "Account Not Found");
+	}
 }

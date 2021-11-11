@@ -1,1 +1,74 @@
-//
+// Fonts
+@import url("https://fonts.googleapis.com/css?family=Nunito");
+
+// Variables
+@import "variables";
+
+// Bootstrap
+@import "~bootstrap/scss/bootstrap";
+
+@font-face {
+    font-family: 'FontinSmallCaps';
+    src: url('https://web.poecdn.com/font/fontin-smallcaps-webfont.eot');
+    src: local("?"), url('https://web.poecdn.com/font/fontin-smallcaps-webfont.woff') format("woff"), url('https://web.poecdn.com/font/fontin-smallcaps-webfont.ttf') format("truetype"), url('https://web.poecdn.com/font/fontin-smallcaps-webfont.svg#webfontSCusr8QL') format("svg");
+    font-weight: normal;
+    font-style: normal
+}
+
+.itemBox {
+	text-align: center;
+	background-color: black;
+	font-family: "FontinSmallCaps", "Fontin SmallCapsa", "Helvetica Neue", Helvetica, Arial, sans-serif;
+}
+
+.itemBox > .itemHeader {
+	position: relative;
+	height: 54px;
+	background: top left repeat-x;
+	background-image: url("https://web.poecdn.com/image/item/popup/header-double-unique-middle.png");
+}
+
+.itemBox > .itemHeader > .itemHeaderLeft {
+	position: absolute;
+	left: 0px;
+	height: 54px;
+	width: 44px;
+	background: url("https://web.poecdn.com/image/item/popup/header-double-unique-left.png") no-repeat top left;
+}
+
+.itemBox > .itemHeader > .itemHeaderRight {
+	position: absolute;
+	right: 0px;
+	height: 54px;
+	width: 44px;
+	background: url("https://web.poecdn.com/image/item/popup/header-double-unique-right.png");
+}
+
+.itemBox > .itemHeader > .itemName {
+	position: relative;
+	top: 3px;
+	height: 27px;
+	font-size: 18px;
+	vertical-align: middle;
+	color: #af6025;
+}
+
+.itemBox > .itemHeader > .itemBase {
+	position: relative;
+	height: 27px;
+	font-size: 18px;
+	vertical-align: middle;
+	color: #af6025;
+}
+
+.itemBox > .itemSeparator {
+	background: center no-repeat;
+	background-image: url("https://web.poecdn.com/image/item/popup/seperator-unique.png");
+	height: 8px;
+}
+
+.itemBox > .itemFlavorText {
+	font-style: italic;
+	color: #af6025;
+	line-height: 1.3;
+}

@@ -19,7 +19,7 @@ class GetStashes extends Command
 
 	public function handle()
 	{
-		$this->getPage("12998218-12295567-12665393-10357447-11729392");
+		$this->getPage("20857614-19175879-20089801-17365522-18799239");
 
 		// TODO
 		// mark leagues when uniques were released
@@ -123,6 +123,17 @@ class GetStashes extends Command
 			$uniqueItem->name = $item["name"];
 			$uniqueItem->icon = $item["icon"];
 			$uniqueItem->base_type = $item["baseType"];
+
+			if(isset($item["flavourText"]))
+				$uniqueItem->flavor_text = implode("<br />", $item["flavourText"]);
+
+			$uniqueItem->save();
+		}
+
+		// TODO remove when they are all filled
+		if(empty($uniqueItem->flavor_text) && isset($item["flavourText"]))
+		{
+			$uniqueItem->flavor_text = implode("<br />", $item["flavourText"]);
 			$uniqueItem->save();
 		}
 

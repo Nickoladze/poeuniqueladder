@@ -149,6 +149,18 @@ cat >> /etc/crontab <<DELIM
 * * * * * root php /var/www/$HOST_NAME/code/artisan schedule:run >> /dev/null 2>&1
 DELIM
 
+## Development only
+apt-get -y install npm
+npm install -g n cross-env
+n 12.0.0
+ln -sf /usr/local/n/versions/node/12.0.0/bin/node /usr/bin/node
+npm install npm@latest -g
+
+cd /var/www/$HOST_NAME/code
+npm install -g yarn
+yarn install
+yarn run dev
+
 php artisan key:generate
 php artisan migrate
 php artisan db:seed
